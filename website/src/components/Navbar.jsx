@@ -11,8 +11,8 @@ function Navbar() {
       <h1 className="text-3xl font-bold text-[#00df9a] w-full">REACT.</h1>
       <ul className="hidden md:flex">
         <li className="p-8 cursor-pointer">HOME</li>
+        <li className="p-8 cursor-pointer"> ABOUT</li>
         <li className="p-8 cursor-pointer">PROJECTS</li>
-        <li className="p-8 cursor-pointer">ABOUT</li>
         <li className="p-8 cursor-pointer">CONTACT</li>
       </ul>
       <div onClick={handleNav} className="block md:hidden">
@@ -29,13 +29,10 @@ function Navbar() {
 
         <ul className="p-4">
           <li className="p-4 border-b border-gray-600 cursor-pointer">HOME</li>
-          <li className="p-4 border-b border-gray-600 cursor-pointer">
-            COMPANY
-          </li>
-          <li className="p-4 border-b border-gray-600 cursor-pointer">
-            RESOURCES
-          </li>
           <li className="p-4 border-b border-gray-600 cursor-pointer">ABOUT</li>
+          <li className="p-4 border-b border-gray-600 cursor-pointer">
+            PROJECTS
+          </li>
           <li className="p-4 border-b border-gray-600 cursor-pointer">
             CONTACT
           </li>
