@@ -11,6 +11,10 @@ function Text() {
         <span className="text-xl">
           A passionate Front-End React Developer based in Kathmandu.
         </span>
+        <br />
+        <span className="text-xl sm:text-2xl md:text-3xl ">
+          More Updates Coming Soon.
+        </span>
       </h1>
       <div className="font-bold text-xl sm:text-2xl md:text-3xl flex justify-center text-[#00df9a]">
         <p>Tech Stack </p>
