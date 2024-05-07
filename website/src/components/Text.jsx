@@ -3,28 +3,30 @@ import Typed from "react-typed";
 
 function Text() {
   return (
-    <div className="text-white mt-60 text-center h-screen mx-auto">
-      <p className="text-[#00df9a] font-bold">Front-End React Developer</p>
-      <h1 className="font-bold py-6 sm:text-4xl md:text-5xl text-2xl">
-        Hi, I'm Akriti Adhikari!
-        <br />
-        <span className="text-xl">
-          A passionate Front-End React Developer based in Kathmandu.
-        </span>
-        <br />
-        <span className="text-xl sm:text-2xl md:text-3xl ">
-          More Updates Coming Soon.
-        </span>
-      </h1>
-      <div className="font-bold text-xl sm:text-2xl md:text-3xl flex justify-center text-[#00df9a]">
-        <p>Tech Stack </p>
-        <Typed
-          className="pl-2"
-          strings={["JavaScript", "React", "Tailwind", "HTML"]}
-          typeSpeed={20}
-          backSpeed={30}
-          loop
-        />
+    <div className="text-white mt-40 mx-auto flex flex-col items-center ">
+      <div className="w-full ml-12 max-w-[640px] text-left items-start">
+        {/* Align "Hi," to the left within the center-aligned block */}
+
+        <p className="font-bold text-lg sm:text-xl md:text-2xl">Hi,</p>
+
+        {/* Main title text remains centered in the same block */}
+        <p className="text-4xl sm:text-5xl md:text-5xl font-bold mt-1">
+          I'm Akriti Adhikari!
+        </p>
+        <p className="text-[#00df9a] font-bold text-xl sm:text-2xl md:text-3xl mt-2">
+          Front-End React Developer
+        </p>
+        <p className="text-md mb-0">From Nepal</p>
+        <div className="font-bold text-xl sm:text-2xl md:text-3xl flex text-left items-start text-[#00df9a] mt-2">
+          <p className=""> Tech Stack </p>
+          <Typed
+            className="pl-2  "
+            strings={["JavaScript", "React", "Tailwind", "HTML"]}
+            typeSpeed={20}
+            backSpeed={30}
+            loop
+          />
+        </div>
       </div>
     </div>
   );

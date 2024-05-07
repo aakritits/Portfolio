@@ -1,43 +1,128 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 function Navbar() {
-  const [nav, setNav] = useState("false");
-  const handleNav = () => {
-    setNav(!nav);
-  };
+  const [nav, setNav] = useState(false);
+  const handleNav = () => setNav(!nav);
+
   return (
-    <div className="text-white flex justify-between items-center mx-w-[1240px] h-24 px-4 mx-auto">
-      <h1 className="font-bold text-[#00df9a] text-3xl w-full cursor-pointer px-2 ">
-        REACT.
+    <nav className="text-white flex justify-between items-center max-w-[1240px] h-20 px-4 mx-auto">
+      <h1 className="font-bold text-[#00df9a] text-3xl cursor-pointer">
+        Portfolio.
       </h1>
-      <div className="hidden md:flex font-bold">
-        <div className="px-12 cursor-pointer">Home</div>
-        <div className="px-12 cursor-pointer">About</div>
-        <div className="px-12 cursor-pointer">Projects</div>
-        <div className="px-12 cursor-pointer">Contact</div>
-      </div>
-      <div onClick={handleNav} className="block md:hidden">
-        {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+      <ul className="hidden md:flex font-bold">
+        <li className="px-4 cursor-pointer">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white border-b-2 border-[#00df9a]"
+                : "text-white hover:text-gray-300"
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="px-4 cursor-pointer">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white border-b-2 border-[#00df9a]"
+                : "text-white hover:text-gray-300"
+            }
+          >
+            About
+          </NavLink>
+        </li>
+        <li className="px-4 cursor-pointer">
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white border-b-2 border-[#00df9a]"
+                : "text-white hover:text-gray-300"
+            }
+          >
+            Projects
+          </NavLink>
+        </li>
+        <li className="px-4 cursor-pointer">
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "text-white border-b-2 border-[#00df9a]"
+                : "text-white hover:text-gray-300"
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+      <div onClick={handleNav} className="md:hidden z-10">
+        {!nav ? <AiOutlineMenu size={30} /> : <AiOutlineClose size={30} />}
       </div>
       <div
         className={
-          !nav
-            ? "fixed top-0 left-0 border-r h-full border-r-gray-900 bg-[#000300] w-[45%]"
-            : "fixed left-[-100%] "
+          nav
+            ? "fixed left-0 top-0 w-[40%] h-full bg-black text-white text-md font-semibold flex flex-col justify-center items-center"
+            : "fixed left-[-100%]"
         }
       >
-        <div className="m-8">
-          <h1 className="font-bold text-[#00df9a] text-3xl ease-in-out duration-5600 w-full cursor-pointer mb-7">
-            REACT.
-          </h1>
-          <div className="p-4 cursor-pointer">Home</div>
-          <div className="p-4 cursor-pointer">About</div>
-          <div className="p-4 cursor-pointer">Projects</div>
-          <div className="p-4 cursor-pointer">Contact</div>
-        </div>
+        <ul className="grid gap-12">
+          <li className="cursor-pointer">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white border-b-2 border-[#00df9a]"
+                  : "text-white hover:text-gray-300"
+              }
+            >
+              Home
+            </NavLink>
+          </li>
+          <li className="cursor-pointer">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white border-b-2 border-[#00df9a]"
+                  : "text-white hover:text-gray-300"
+              }
+            >
+              About
+            </NavLink>
+          </li>
+          <li className="cursor-pointer">
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white border-b-2 border-[#00df9a]"
+                  : "text-white hover:text-gray-300"
+              }
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li className="cursor-pointer">
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white border-b-2 border-[#00df9a]"
+                  : "text-white hover:text-gray-300"
+              }
+            >
+              Contact
+            </NavLink>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 
